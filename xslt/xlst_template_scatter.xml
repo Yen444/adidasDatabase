@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+  <html>
+  <head>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      /* height: 500px; Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+  </style>
+  </head>
+  <body>
+    <h1>Shoe Database Project</h1>
+
+    <div class="row">
+      <div class="column">
+        <h2>Scatter Plots Men</h2>
+
+        
+        <canvas id="scatterChartPriceReviewsMen"></canvas>
+        <canvas id="scatterChartPriceStarsMen"></canvas>
+      </div>
+      <div class="column">
+        <h2>Scatter Plots Women</h2>
+        <canvas id="scatterChartPriceReviewsWoman"></canvas>
+        <canvas id="scatterChartPriceStarsWoman"></canvas>
+
+      </div>
+    </div>
+
+    <button id="GoBackToHist" class="scatter-plot-button">Back</button>
+
+    <script>
+
+      var backButton = document.getElementById('GoBackToHist');
+      backButton.addEventListener('click', function() {
+          // Code to be executed when the button is clicked
+          // Replace with your desired action
+          window.location.href = "histogram.html";
+      });
+
+
+    // START PRICE VS. NUMBER REVIEWS MAN
+    <xsl:text>var scatter_price_n_reviews_man = [</xsl:text>
+    <xsl:for-each select="ShoeResults/RawDataMan/Entry">
+      <xsl:text>{x: </xsl:text>
+      <xsl:value-of select="Price"/>
+      <xsl:text>, y: </xsl:text>
+      <xsl:value-of select="NumberReviews"/>
+      <xsl:text>}, </xsl:text>
+    </xsl:for-each>
+    <xsl:text>];</xsl:text>
+
+    // Data for the scatter plot
+    const data_prive_n_reviews_man = {
+      datasets: [{
+        label: 'Price vs. Number reviews',
+        data: scatter_price_n_reviews_man,
+        backgroundColor: 'rgba(75, 192, 192, 0.8)', // Customize the point color
+        borderColor: 'rgba(75, 192, 192, 1)', // Customize the border color
+        borderWidth: 1 // Customize the border width
+      }]
+    };
+
+    // Configuration options for the scatter plot
+    const options_price_n_reviews_man = {
+      responsive: true,
+      scales: {
+        x: {
+          type: 'linear',
+          position: 'bottom',
+          title: {
+            display: true,
+            text: "Price"
+          }
+        },
+        y: {
+          type: 'linear',
+          position: 'left',
+          title: {
+            display: true,
+            text: "Number Reviews"
+          }
+        }
+      }
+    };
+
+    // Create the scatter plot
+    const scatter_prive_n_reviews_man = new Chart(document.getElementById('scatterChartPriceReviewsMen'), {
+      type: 'scatter',
+      data: data_prive_n_reviews_man,
+      options: options_price_n_reviews_man
+    });
+    // END PRICE VS. NUMBER REVIEWS MAN
+
+    // START PRICE VS. NUMBER STARS MAN
+    <xsl:text>var scatter_price_n_stars_man = [</xsl:text>
+    <xsl:for-each select="ShoeResults/RawDataMan/Entry">
+      <xsl:text>{x: </xsl:text>
+      <xsl:value-of select="Price"/>
+      <xsl:text>, y: </xsl:text>
+      <xsl:value-of select="NumberStars"/>
+      <xsl:text>}, </xsl:text>
+    </xsl:for-each>
+    <xsl:text>];</xsl:text>
+
+    // Data for the scatter plot
+    const data_prive_n_stars_man = {
+      datasets: [{
+        label: 'Price vs. Number Stars',
+        data: scatter_price_n_stars_man,
+        backgroundColor: 'rgba(75, 192, 192, 0.8)', // Customize the point color
+        borderColor: 'rgba(75, 192, 192, 1)', // Customize the border color
+        borderWidth: 1 // Customize the border width
+      }]
+    };
+
+    // Configuration options for the scatter plot
+    const options_price_n_stars_man = {
+      responsive: true,
+      scales: {
+        x: {
+          type: 'linear',
+          position: 'bottom',
+          title: {
+            display: true,
+            text: "Price"
+          }
+        },
+        y: {
+          type: 'linear',
+          position: 'left',
+          title: {
+            display: true,
+            text: "Number Stars"
+          }
+        }
+      }
+    };
+
+    // Create the scatter plot
+    const scatter_prive_n_stars_man = new Chart(document.getElementById('scatterChartPriceStarsMen'), {
+      type: 'scatter',
+      data: data_prive_n_stars_man,
+      options: options_price_n_stars_man
+    });
+    // END PRICE VS. NUMBER STARS  MAN
+
+    // START PRICE VS. NUMBER REVIEWS WOMAN
+    <xsl:text>var scatter_price_n_reviews_woman = [</xsl:text>
+    <xsl:for-each select="ShoeResults/RawDataWomen/Entry">
+      <xsl:text>{x: </xsl:text>
+      <xsl:value-of select="Price"/>
+      <xsl:text>, y: </xsl:text>
+      <xsl:value-of select="NumberReviews"/>
+      <xsl:text>}, </xsl:text>
+    </xsl:for-each>
+    <xsl:text>];</xsl:text>
+
+    // Data for the scatter plot
+    const data_prive_n_reviews_woman = {
+      datasets: [{
+        label: 'Price vs. Number reviews',
+        data: scatter_price_n_reviews_woman,
+        backgroundColor: 'rgba(75, 192, 192, 0.8)', // Customize the point color
+        borderColor: 'rgba(75, 192, 192, 1)', // Customize the border color
+        borderWidth: 1 // Customize the border width
+      }]
+    };
+
+    // Configuration options for the scatter plot
+    const options_price_n_reviews_woman = {
+      responsive: true,
+      scales: {
+        x: {
+          type: 'linear',
+          position: 'bottom',
+          title: {
+            display: true,
+            text: "Price"
+          }
+        },
+        y: {
+          type: 'linear',
+          position: 'left',
+          title: {
+            display: true,
+            text: "Number Reviews"
+          }
+        }
+      }
+    };
+
+    // Create the scatter plot
+    const scatter_prive_n_reviewswoman = new Chart(document.getElementById('scatterChartPriceReviewsWoman'), {
+      type: 'scatter',
+      data: data_prive_n_reviews_woman,
+      options: options_price_n_reviews_woman
+    });
+    // END PRICE VS. NUMBER REVIEWS WOMAN
+
+
+    // START PRICE VS. NUMBER STARS WOMEN
+    <xsl:text>var scatter_price_n_stars_women = [</xsl:text>
+    <xsl:for-each select="ShoeResults/RawDataWomen/Entry">
+      <xsl:text>{x: </xsl:text>
+      <xsl:value-of select="Price"/>
+      <xsl:text>, y: </xsl:text>
+      <xsl:value-of select="NumberStars"/>
+      <xsl:text>}, </xsl:text>
+    </xsl:for-each>
+    <xsl:text>];</xsl:text>
+
+    // Data for the scatter plot
+    const data_prive_n_stars_women = {
+      datasets: [{
+        label: 'Price vs. Number Stars',
+        data: scatter_price_n_stars_women,
+        backgroundColor: 'rgba(75, 192, 192, 0.8)', // Customize the point color
+        borderColor: 'rgba(75, 192, 192, 1)', // Customize the border color
+        borderWidth: 1 // Customize the border width
+      }]
+    };
+
+    // Configuration options for the scatter plot
+    const options_price_n_stars_women = {
+      responsive: true,
+      scales: {
+        x: {
+          type: 'linear',
+          position: 'bottom',
+          title: {
+            display: true,
+            text: "Price"
+          }
+        },
+        y: {
+          type: 'linear',
+          position: 'left',
+          title: {
+            display: true,
+            text: "Number Stars"
+          }
+        }
+      }
+    };
+
+    // Create the scatter plot
+    const scatter_prive_n_stars_women = new Chart(document.getElementById('scatterChartPriceStarsWoman'), {
+      type: 'scatter',
+      data: data_prive_n_stars_women,
+      options: options_price_n_stars_women
+    });
+    // END PRICE VS. NUMBER STARS WOMEN
+
+
+    </script>
+  </body>
+  </html>
+</xsl:template>
+</xsl:stylesheet> 
+
+

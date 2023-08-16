@@ -1,0 +1,89 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 20%;
+      padding: 10px;
+      /* height: 500px; Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+  </style>
+</head>
+<body>
+<h1 class="custom-header">Shoe Database Project</h1>
+<table>
+<tr>
+<th>Measure</th>
+<th>Women</th>
+<th>Men</th>
+</tr>
+<tr>
+<td>Number products</td>
+<td>2544</td>
+<td>1872</td>
+</tr>
+<tr>
+<td>Number products on sale</td>
+<td>1180</td>
+<td>716</td>
+</tr>
+<tr>
+<td>Number products with review:</td>
+<td>2363</td>
+<td>1713</td>
+</tr>
+<tr>
+<td>Mean Price</td>
+<td>131.59</td>
+<td>134.20</td>
+</tr>
+<tr>
+<td>Price Stdev</td>
+<td>57.93</td>
+<td>60.95</td>
+</tr>
+<tr>
+<td>Price Range</td>
+<td>0.00 -  450.00</td>
+<td>0.00 -  450.00</td>
+</tr>
+<tr>
+<td>Mean Rating</td>
+<td>4.32</td>
+<td>4.25</td>
+</tr>
+<tr>
+<td>Variance Rating:</td>
+<td>1.10</td>
+<td>1.20</td>
+</tr>
+<tr>
+<td>Rating Range:</td>
+<td>0.00 - 5.00</td>
+<td>0.00 - 5.00</td>
+</tr>
+</table>
+<button id="nextButton" class="custom-button">Goto Histograms</button><script>
+      var nextButton = document.getElementById('nextButton');
+      nextButton.addEventListener('click', function() {
+          // Code to be executed when the button is clicked
+          // Replace with your desired action
+          window.location.href = "histogram.html";
+      });
+
+    </script>
+</body>
+</html>

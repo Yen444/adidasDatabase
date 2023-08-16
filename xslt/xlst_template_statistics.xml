@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+  <html>
+  <head>
+  <!-- comment -->  
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 20%;
+      padding: 10px;
+      /* height: 500px; Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+  </style>
+  </head>
+  <body>
+    <h1 class="custom-header" >Shoe Database Project</h1>
+
+    <table>
+    <tr>
+    <th>Measure</th>
+    <th>Women</th>
+    <th>Men</th>
+    </tr>
+
+    <tr>
+    <td>Number products</td>
+    <td> <xsl:value-of select="ShoeResults/StatisticsWomen/NumberProducts" /></td>
+    <td> <xsl:value-of select="ShoeResults/StatisticsMan/NumberProducts" /></td>
+    </tr>
+
+    <tr>
+    <td>Number products on sale</td>
+    <td><xsl:value-of select="ShoeResults/StatisticsWomen/NumberSaleProducts"/></td>
+    <td><xsl:value-of select="ShoeResults/StatisticsMan/NumberSaleProducts"/></td>
+    </tr>
+
+    <tr>
+    <td>Number products with review:</td>
+    <td><xsl:value-of select="ShoeResults/StatisticsWomen/NumberProductsWithReview"/></td>
+    <td><xsl:value-of select="ShoeResults/StatisticsMan/NumberProductsWithReview"/></td>
+    </tr>
+
+    <tr>
+      <td>Mean Price</td>
+      <td><xsl:value-of select="ShoeResults/StatisticsWomen/Mean"/></td>
+      <td> <xsl:value-of select="ShoeResults/StatisticsMan/Mean"/></td>
+    </tr>
+
+    <tr>
+      <td>Price Stdev</td>
+      <td><xsl:value-of select="ShoeResults/StatisticsWomen/Stdev"/></td>
+      <td><xsl:value-of select="ShoeResults/StatisticsMan/Stdev"/></td>
+    </tr>
+
+    <tr>
+      <td>Price Range</td>
+      <td><xsl:value-of select="ShoeResults/StatisticsWomen/MinPrice"/> -  <xsl:value-of select="ShoeResults/StatisticsWomen/MaxPrice"/> </td>
+      <td><xsl:value-of select="ShoeResults/StatisticsMan/MinPrice"/> -  <xsl:value-of select="ShoeResults/StatisticsMan/MaxPrice"/></td>
+    </tr>
+
+    <tr>
+      <td>Mean Rating</td>
+      <td> <xsl:value-of select="ShoeResults/StatisticsWomen/MeanStars"/></td>
+      <td> <xsl:value-of select="ShoeResults/StatisticsMan/MeanStars"/></td>
+    </tr>
+
+    <tr>
+      <td>Variance Rating:</td>
+      <td> <xsl:value-of select="ShoeResults/StatisticsWomen/StdevStars" /></td>
+      <td> <xsl:value-of select="ShoeResults/StatisticsMan/StdevStars" /></td>
+    </tr>
+
+    <tr>
+      <td>Rating Range:</td>
+      <td><xsl:value-of select="ShoeResults/StatisticsWomen/MinStars"/> - <xsl:value-of select="ShoeResults/StatisticsWomen/MaxStars"/></td>
+      <td><xsl:value-of select="ShoeResults/StatisticsMan/MinStars"/> - <xsl:value-of select="ShoeResults/StatisticsMan/MaxStars"/></td>
+    </tr>
+    </table>
+
+    <button id="nextButton" class="custom-button">Goto Histograms</button>
+
+    <script>
+      var nextButton = document.getElementById('nextButton');
+      nextButton.addEventListener('click', function() {
+          // Code to be executed when the button is clicked
+          // Replace with your desired action
+          window.location.href = "histogram.html";
+      });
+
+    </script>
+  </body>
+  </html>
+</xsl:template>
+</xsl:stylesheet> 
+
+

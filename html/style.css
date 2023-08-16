@@ -1,0 +1,120 @@
+/* Dark Mode Style Sheet */
+
+/* Set the body background color to dark gray */
+body {
+    background-color: #333;
+    color: #fff; /* Set text color to white */
+  }
+  
+  /* Change the background color of specific elements */
+  .container {
+    background-color: #444; /* Lighter gray for container elements */
+  }
+  
+  /* Change the background color of buttons */
+  .button {
+    background-color: #666; /* A slightly lighter gray for buttons */
+    color: #fff; /* Set text color to white */
+  }
+  
+  /* Change the link color and remove underlines */
+  a {
+    color: #77c; /* Set link color to a shade of blue */
+    text-decoration: none; /* Remove underlines from links */
+  }
+  
+  /* Change heading colors */
+  h1, h2, h3 {
+    color: #ddd; /* Set heading color to a light gray */
+  }
+  
+  /* Change the color of unordered and ordered lists */
+  ul, ol {
+    color: #ddd;
+  }
+  
+  /* Change the color of list item bullets/numbers */
+  li {
+    color: #ddd;
+  }
+
+  p {
+    color: #ddd;
+  }
+  
+  column {
+    background-color: #222; /* Dark gray for the header */
+  }
+  /* Optional: Add custom styles for specific elements */
+  /* For example, if you have a header element with an ID "header" */
+  #header {
+    background-color: #222; /* Dark gray for the header */
+    color: #fff;
+    padding: 20px; /* Add padding for better readability */
+  }
+  
+  /* If you have a footer element with an ID "footer" */
+  #footer {
+    background-color: #222; /* Dark gray for the footer */
+    color: #ddd; /* Set text color to a lighter gray */
+    padding: 10px;
+  }
+  
+  /* You can continue customizing other elements as needed */
+  
+  /* If you want to invert images for dark mode, you can use the 'filter' property */
+  /* For example, to make images grayscale in dark mode */
+  img {
+    filter: grayscale(100%);
+  }
+  
+
+  /* Set the row to use flexbox for horizontal layout */
+ .row {
+    display: flex;
+    justify-content: space-between; /* Adjust this to change the space between columns */
+  }
+  
+  /* Apply styling to the column elements */
+  .column {
+    margin-right: 50px; 
+    padding: 50px; /* Add some padding for spacing */
+    border: 1px solid #ccc; /* Add a border around each column */
+    min-width: 400px;
+  }
+  
+  /* Add vertical lines between columns */
+  .column:not(:last-child) {
+    border-right: 1px solid #ccc;
+  }
+
+  table {
+    border-collapse: collapse; /* Combine table borders for a cleaner look */
+    width: 600px; /* Set a fixed width for the table (adjust as needed) */
+    margin-left: 30%;
+  }
+  .custom-header {
+    margin-left: 30%;
+  }
+
+  .custom-button {
+    margin-left: 30%;
+    font-size: 12pt;
+  }
+
+  .hist-button {
+    font-size: 12pt;
+  }
+
+  .scatter-plot-button {
+    font-size: 12pt;
+  }
+
+  th, td {
+    border: 1px solid #ccc; /* Add a border around table cells */
+    padding: 10px; /* Add some padding for spacing */
+    text-align: center; /* Center align the content in cells */
+  }
+  th {
+    background-color: #222; /* Add a light gray background color for table header cells */
+  }

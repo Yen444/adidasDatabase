@@ -1,0 +1,14 @@
+cffi @ file:///Users/runner/miniforge3/conda-bld/cffi_1671179612308/work
+cryptography @ file:///Users/runner/miniforge3/conda-bld/cryptography-split_1685659511778/work
+dnspython @ file:///home/conda/feedstock_root/build_artifacts/dnspython_1673812078720/work
+idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1663625384323/work
+lxml @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_cccmd60j4n/croot/lxml_1679646460589/work
+mkl-fft==1.3.6
+mkl-random @ file:///Users/ec2-user/mkl/mkl_random_1682994911338/work
+mkl-service==2.4.0
+mongoengine @ file:///Users/runner/miniforge3/conda-bld/mongoengine_1674324459735/work
+numpy @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_facv4mnp7u/croot/numpy_and_numpy_base_1687466217056/work
+Pillow==9.4.0
+pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1636257122734/work
+pymongo @ file:///Users/runner/miniforge3/conda-bld/pymongo_1668739539523/work
+six @ file:///tmp/build/80754af9/six_1644875935023/work

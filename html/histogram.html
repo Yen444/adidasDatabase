@@ -1,0 +1,309 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      /* height: 500px; Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+  </style>
+</head>
+<body>
+<h1>Shoe Database Project</h1>
+<div class="row">
+<div class="column">
+<h2>Histogram Men</h2>
+<canvas id="histogramPriceMenCanvas"></canvas>
+</div>
+<div class="column">
+<h2>Histogram Women</h2>
+<canvas id="histogramPriceWomenCanvas"></canvas>
+</div>
+</div>
+<button id="GoBackToHist" class="hist-button">Back</button><button id="GoToScatter" class="hist-button">Next</button><script>
+
+      var nextButton = document.getElementById('GoBackToHist');
+      nextButton.addEventListener('click', function() {
+          window.location.href = "statistics.html";
+      });
+
+      var goToScatter = document.getElementById('GoToScatter');
+      goToScatter.addEventListener('click', function() {
+          window.location.href = "scatter.html";
+      });
+
+
+      var price_men_labels = [];
+      var price_men_values = [];
+      
+        price_men_labels.push('0.0');
+        price_men_values.push('42');
+      
+        price_men_labels.push('22.5');
+        price_men_values.push('41');
+      
+        price_men_labels.push('45.0');
+        price_men_values.push('119');
+      
+        price_men_labels.push('67.5');
+        price_men_values.push('120');
+      
+        price_men_labels.push('90.0');
+        price_men_values.push('396');
+      
+        price_men_labels.push('112.5');
+        price_men_values.push('322');
+      
+        price_men_labels.push('135.0');
+        price_men_values.push('299');
+      
+        price_men_labels.push('157.5');
+        price_men_values.push('163');
+      
+        price_men_labels.push('180.0');
+        price_men_values.push('176');
+      
+        price_men_labels.push('202.5');
+        price_men_values.push('57');
+      
+        price_men_labels.push('225.0');
+        price_men_values.push('30');
+      
+        price_men_labels.push('247.5');
+        price_men_values.push('44');
+      
+        price_men_labels.push('270.0');
+        price_men_values.push('7');
+      
+        price_men_labels.push('292.5');
+        price_men_values.push('38');
+      
+        price_men_labels.push('315.0');
+        price_men_values.push('3');
+      
+        price_men_labels.push('337.5');
+        price_men_values.push('10');
+      
+        price_men_labels.push('360.0');
+        price_men_values.push('0');
+      
+        price_men_labels.push('382.5');
+        price_men_values.push('4');
+      
+        price_men_labels.push('405.0');
+        price_men_values.push('0');
+      
+        price_men_labels.push('427.5');
+        price_men_values.push('1');
+      
+
+      // Create a canvas element to render the chart
+      const canvas_1 = document.getElementById('histogramPriceMenCanvas');
+      // Use Chart.js to create the histogram
+      new Chart(canvas_1, {
+        type: 'bar',
+        data: {
+          labels: price_men_labels,
+          datasets: [{
+            label: 'Distribution of Prices',
+            data: price_men_values,
+            backgroundColor: 'rgba(75, 192, 192, 0.6)', // Customize the color
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+
+            x: {
+              title: {
+                display: true,
+                text: "Price"
+              }
+            },
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: "Number prices"
+              }
+            }
+          }
+        }
+      });
+
+      var price_women_labels = [];
+      var price_women_values = [];
+      
+        price_women_labels.push('0.0');
+        price_women_values.push('47');
+      
+        price_women_labels.push('22.5');
+        price_women_values.push('61');
+      
+        price_women_labels.push('45.0');
+        price_women_values.push('196');
+      
+        price_women_labels.push('67.5');
+        price_women_values.push('169');
+      
+        price_women_labels.push('90.0');
+        price_women_values.push('495');
+      
+        price_women_labels.push('112.5');
+        price_women_values.push('477');
+      
+        price_women_labels.push('135.0');
+        price_women_values.push('421');
+      
+        price_women_labels.push('157.5');
+        price_women_values.push('210');
+      
+        price_women_labels.push('180.0');
+        price_women_values.push('238');
+      
+        price_women_labels.push('202.5');
+        price_women_values.push('81');
+      
+        price_women_labels.push('225.0');
+        price_women_values.push('35');
+      
+        price_women_labels.push('247.5');
+        price_women_values.push('49');
+      
+        price_women_labels.push('270.0');
+        price_women_values.push('10');
+      
+        price_women_labels.push('292.5');
+        price_women_values.push('38');
+      
+        price_women_labels.push('315.0');
+        price_women_values.push('3');
+      
+        price_women_labels.push('337.5');
+        price_women_values.push('9');
+      
+        price_women_labels.push('360.0');
+        price_women_values.push('0');
+      
+        price_women_labels.push('382.5');
+        price_women_values.push('4');
+      
+        price_women_labels.push('405.0');
+        price_women_values.push('0');
+      
+        price_women_labels.push('427.5');
+        price_women_values.push('1');
+      
+
+      // Create a canvas element to render the chart
+      const canvas_2 = document.getElementById('histogramPriceWomenCanvas');
+      // Use Chart.js to create the histogram
+      new Chart(canvas_2, {
+        type: 'bar',
+        data: {
+          labels: price_women_labels,
+          datasets: [{
+            label: 'Distribution of Prices',
+            data: price_women_values,
+            backgroundColor: 'rgba(75, 192, 192, 0.6)', // Customize the color
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Price"
+              }
+            },
+            y: {
+              beginAtZero: true,
+              title : {
+                display: true,
+                text: "Number prices"
+              }
+            }
+          }
+        }
+      });
+
+    var price_men_labels = [];
+    var price_men_values = [];
+    
+      price_men_labels.push('0.0');
+      price_men_values.push('42');
+    
+      price_men_labels.push('22.5');
+      price_men_values.push('41');
+    
+      price_men_labels.push('45.0');
+      price_men_values.push('119');
+    
+      price_men_labels.push('67.5');
+      price_men_values.push('120');
+    
+      price_men_labels.push('90.0');
+      price_men_values.push('396');
+    
+      price_men_labels.push('112.5');
+      price_men_values.push('322');
+    
+      price_men_labels.push('135.0');
+      price_men_values.push('299');
+    
+      price_men_labels.push('157.5');
+      price_men_values.push('163');
+    
+      price_men_labels.push('180.0');
+      price_men_values.push('176');
+    
+      price_men_labels.push('202.5');
+      price_men_values.push('57');
+    
+      price_men_labels.push('225.0');
+      price_men_values.push('30');
+    
+      price_men_labels.push('247.5');
+      price_men_values.push('44');
+    
+      price_men_labels.push('270.0');
+      price_men_values.push('7');
+    
+      price_men_labels.push('292.5');
+      price_men_values.push('38');
+    
+      price_men_labels.push('315.0');
+      price_men_values.push('3');
+    
+      price_men_labels.push('337.5');
+      price_men_values.push('10');
+    
+      price_men_labels.push('360.0');
+      price_men_values.push('0');
+    
+      price_men_labels.push('382.5');
+      price_men_values.push('4');
+    
+      price_men_labels.push('405.0');
+      price_men_values.push('0');
+    
+      price_men_labels.push('427.5');
+      price_men_values.push('1');
+    </script>
+</body>
+</html>
