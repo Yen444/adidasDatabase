@@ -4,9 +4,9 @@
 ## Workflow
 ![](workflow.png)
 
-- Collect: scrape shoe product information from adidas.de and save in json files
-- Prepare: set up a MongoDB database and insert json files into that database
-- Access: query the database to do statistical analysis, write the results in one XML file, write XSLT templates to transform XML to HTML, finally achieving the goal of presenting the the database’s statistics on a website
+- **Collect**: scrape shoe product information from [adidas.de](adidas.de)
+- **Prepare**: set up a MongoDB database and insert scraped info into that database
+- **Access**: query the database, write the results in XML file, write XSLT templates to transform XML to HTML
 ## File Structure
 ```bash
 ├── README.md
